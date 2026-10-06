@@ -1,0 +1,136 @@
+/* ========================================================
+   Glass Fold Ticker - Exact 3D Parametric Folding Engine
+   ======================================================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, #ffffff 0%, #f6f8fb 100%);
+}
+
+/* Outer Wrapper */
+.ticker-viewport {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y;
+}
+
+.ticker-viewport.grabbing {
+  cursor: grabbing;
+}
+
+/* 3D Stage */
+.stage-container {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  flex-shrink: 0;
+  perspective: 1100px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+}
+
+/* Individual Facet (Strip) */
+.facet-strip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 420px;
+  overflow: hidden;
+  transform-origin: 0% 50%;
+  transform-style: flat;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+  contain: layout paint style;
+  pointer-events: none;
+}
+
+/* Inner Image Container */
+.facet-image-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(30, 30, 34);
+  border-radius: 12px;
+  will-change: transform;
+}
+
+.facet-image-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* Glass Edge & Constant Specular Reflection */
+.facet-glass-edge {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+/* Dynamic Chromatic Sheen & Angle Light Layer */
+.facet-glass-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  will-change: opacity;
+  transition: opacity 0.05s linear;
+}
+
+/* Ambient Corner Vignette / Glow */
+.ambient-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 85% 70% at 50% 50%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(225, 235, 245, 0.45) 100%
+  );
+  z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 810px) {
+  .stage-container,
+  .facet-strip {
+    height: 320px;
+  }
+}
