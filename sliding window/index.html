@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sliding Window — 3D Perspective Carousel</title>
+  <meta name="description" content="Precision 3D Sliding Window cover-flow carousel with perspective curvature, depth-of-field blur, spring physics, and kinetic drag.">
+  
+  <!-- Typography: Inter and Monospace -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="carousel-viewport" id="carousel-viewport">
+    
+    <!-- Top Right Interaction Hint -->
+    <div class="interaction-hint" id="interaction-hint">SCROLL / DRAG</div>
+
+    <!-- 3D Perspective Stage -->
+    <div class="perspective-stage" id="perspective-stage">
+      <div class="cards-track" id="cards-track">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+
+    <!-- Edge Blur Gradient Masks -->
+    <div class="edge-mask edge-mask--left" aria-hidden="true"></div>
+    <div class="edge-mask edge-mask--right" aria-hidden="true"></div>
+
+    <!-- Bottom Caption & Index Counter -->
+    <div class="carousel-caption" id="carousel-caption">
+      <span class="caption-title" id="caption-title">NORTHERN RIDGE</span>
+      <span class="caption-counter" id="caption-counter">01 — 06</span>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
