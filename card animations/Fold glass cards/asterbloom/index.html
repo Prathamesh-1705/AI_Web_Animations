@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floating Waves — Curved Ribbon Gallery</title>
+  <meta name="description" content="Floating Waves — GPU-accelerated non-linear curved ribbon image gallery with dynamic Gaussian bulge and fullscreen ambient crossfades.">
+  
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Main WebGL Curved Ribbon Gallery Section -->
+  <main class="gallery-viewport" id="gallery-viewport">
+    
+    <!-- Active Project Details HUD (floating overlay) -->
+    <div class="project-hud" id="project-hud">
+      <span class="project-counter" id="project-counter">01 / 10</span>
+      <h2 class="project-title" id="project-title">THE COLLECTOR</h2>
+    </div>
+
+    <!-- WebGL Canvas for GPU-Accelerated Non-Linear Bulge Ribbon -->
+    <canvas id="ribbon-canvas" class="ribbon-canvas"></canvas>
+
+    <!-- Bottom Instruction / Drag Hint -->
+    <div class="drag-hint">
+      <span>Drag or Scroll to Explore</span>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p class="copyright">&copy; 2026 floating waves</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
